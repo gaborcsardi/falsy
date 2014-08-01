@@ -179,6 +179,28 @@ is_truthy <- function(object) {
   }
 }
 
+#' Negate the falsyness of a value
+#'
+#' @param rhs Value. If it is truthy, a falsy value (\code{FALSY}) is
+#' returned, otherwise a truthy value (\code{TRUTHY}) is returned.
+#' @return Logical scalar.
+#'
+#' @export
+#' @examples
+#' not(FALSY)
+#' not(TRUTHY)
+#'
+#' ## Check if directory is empty
+#' tmp <- tempdir()
+#' not(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
+#'
+#' cat("Hello!", file = tempfile())
+#' not(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
+
+not <- function(rhs) {
+  if (is_falsy(rhs)) { TRUTHY } else { FALSY }
+}
+
 #' Try quietly
 #'
 #' We just call \code{try} and set its \code{silent} argument to
