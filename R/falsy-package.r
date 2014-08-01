@@ -5,9 +5,27 @@
 #' Python and Ruby. See the \code{\%||\%} and the \code{\%&&\%} operators
 #' on how to write concise conditional code using truthy and falsy values.
 #'
-#' @name falsy
+#' @name Falsy package
 #' @docType package
 NULL
+
+#' A constant that is falsy
+#'
+#' @export
+#' @examples
+#' is_falsy(FALSY)
+#' is_truthy(FALSY)
+
+FALSY <- FALSE
+
+#' A constant that is truthy.
+#'
+#' @export
+#' @examples
+#' is_truthy(TRUTHY)
+#' is_falsy(FALSY)
+
+TRUTHY <- TRUE
 
 #' Is an object FALSY
 #'

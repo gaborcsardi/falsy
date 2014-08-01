@@ -2,6 +2,8 @@
 
 export("%&&%")
 export("%||%")
+export(FALSY)
+export(TRUTHY)
 export(is_falsy)
 export(is_truthy)
 export(try_quietly)
