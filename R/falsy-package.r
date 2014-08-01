@@ -84,7 +84,7 @@ is_falsy <- function(object) {
     inherits(object, "try-error")
 }
 
-#' Is an object TRUY
+#' Is an object TRUTHY
 #'
 #' @param object The object.
 #'
