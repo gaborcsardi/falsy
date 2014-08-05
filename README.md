@@ -1,7 +1,7 @@
 
 
 
-# falsy -- warning: this package is probably useless and surely experimental
+# falsy — warning: this package is experimental
 
 falsy defines *falsy* and *truthy* values. You might be familiar with them
 in other dynamic laguanges with prevalent implicit type conversions,
