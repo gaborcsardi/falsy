@@ -1,9 +1,12 @@
-#' falsy.
+#' Falsy package.
 #'
 #' We define a set of objects as \sQuote{falsy}. Every other values are
 #' \sQuote{truthy}. This is inspired by other scripting languages like
 #' Python and Ruby. See the \code{\%||\%} and the \code{\%&&\%} operators
 #' on how to write concise conditional code using truthy and falsy values.
+#'
+#' See \link{\code{is_falsy}} for the definition of what is \emph{falsy}
+#' and what is \emph{truthy}.
 #'
 #' @name Falsy package
 #' @docType package
@@ -27,7 +30,13 @@ FALSY <- FALSE
 
 TRUTHY <- TRUE
 
-#' Is an object FALSY
+#' Is an object FALSY?
+#'
+#' Everything that is \code{FALSE} is also \emph{falsy}. Everything that is
+#' \code{TRUE}, is  also \emph{truthy}. Other things are either falsy, or
+#' truthy, see the details below.
+#'
+#' @details
 #'
 #' Falsy objects are:
 #' \itemize{
@@ -84,7 +93,7 @@ is_falsy <- function(object) {
     inherits(object, "try-error")
 }
 
-#' Is an object TRUTHY
+#' Is an object TRUTHY?
 #'
 #' @param object The object.
 #'
@@ -107,7 +116,7 @@ is_truthy <- function(object) {
   ! is_falsy(object)
 }
 
-#' Robust 'or' operator working with truthy and falsy values
+#' Robust 'or' operator working with truthy and falsy values.
 #'
 #' @rdname or
 #' @name or
@@ -147,7 +156,7 @@ is_truthy <- function(object) {
   }
 }
 
-#' Robust 'and' operator working with truthy and falsy values
+#' Robust 'and' operator working with truthy and falsy values.
 #'
 #' @rdname and
 #' @name and
@@ -179,7 +188,7 @@ is_truthy <- function(object) {
   }
 }
 
-#' Negate the falsyness of a value
+#' Negate the falsyness of a value.
 #'
 #' @param rhs Value. If it is truthy, a falsy value (\code{FALSY}) is
 #' returned, otherwise a truthy value (\code{TRUTHY}) is returned.

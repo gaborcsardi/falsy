@@ -2,7 +2,7 @@
 \name{or}
 \alias{\%||\%}
 \alias{or}
-\title{Robust 'or' operator working with truthy and falsy values}
+\title{Robust 'or' operator working with truthy and falsy values.}
 \usage{
 lhs \%||\% rhs
 }
@@ -13,7 +13,7 @@ lhs \%||\% rhs
 evaluates to FALSY.}
 }
 \description{
-Robust 'or' operator working with truthy and falsy values
+Robust 'or' operator working with truthy and falsy values.
 }
 \examples{
 \donttest{

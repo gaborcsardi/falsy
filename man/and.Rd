@@ -2,7 +2,7 @@
 \name{and}
 \alias{\%&&\%}
 \alias{and}
-\title{Robust 'and' operator working with truthy and falsy values}
+\title{Robust 'and' operator working with truthy and falsy values.}
 \usage{
 lhs \%&&\% rhs
 }
@@ -13,7 +13,7 @@ lhs \%&&\% rhs
 evaluates to TRUTHY.}
 }
 \description{
-Robust 'and' operator working with truthy and falsy values
+Robust 'and' operator working with truthy and falsy values.
 }
 \examples{
 ## Shift to zero
