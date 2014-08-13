@@ -146,8 +146,6 @@ is_truthy <- function(object) {
 #' }
 
 `%||%` <- function(lhs, rhs) {
-  lhs <- substitute(lhs)
-  rhs <- substitute(rhs)
   lres <- withVisible(eval(lhs, envir = parent.frame()))
   if (is_falsy(lres$value)) {
     eval(rhs, envir = parent.frame())
@@ -178,8 +176,6 @@ is_truthy <- function(object) {
 #' v
 
 `%&&%` <- function(lhs, rhs) {
-  lhs <- substitute(lhs)
-  rhs <- substitute(rhs)
   lres <- withVisible(eval(lhs, envir = parent.frame()))
   if (is_truthy(lres$value)) {
     eval(rhs, envir = parent.frame())
