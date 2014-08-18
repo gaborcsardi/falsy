@@ -3,6 +3,10 @@
 
 # falsy — warning: this package is experimental
 
+[![Linux Build Status](https://travis-ci.org/gaborcsardi/falsy.png?branch=master)](https://travis-ci.org/gaborcsardi/falsy)
+
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/cn0ooxtcame61mpu)](https://ci.appveyor.com/project/gaborcsardi/falsy)
+
 falsy defines *falsy* and *truthy* values. You might be familiar with them
 in other dynamic laguanges with prevalent implicit type conversions,
 e.g Python, Ruby, JavaScript and Lisp.
