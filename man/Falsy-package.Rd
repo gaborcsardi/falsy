@@ -11,7 +11,7 @@ Python and Ruby. See the \code{\%||\%} and the \code{\%&&\%} operators
 on how to write concise conditional code using truthy and falsy values.
 }
 \details{
-See \link{\code{is_falsy}} for the definition of what is \emph{falsy}
+See \code{\link{is_falsy}} for the definition of what is \emph{falsy}
 and what is \emph{truthy}.
 }
 
