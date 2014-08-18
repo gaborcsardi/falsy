@@ -7,4 +7,5 @@ Description: A value is falsy if it is NULL, FALSE, the empty string,
     %&&% and %||% operators work with falsy and truthy values and
     can be used for concise conditional execution.
 License: MIT + file LICENSE
-Suggests: testthat
+Suggests:
+    testthat
