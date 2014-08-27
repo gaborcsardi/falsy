@@ -32,23 +32,23 @@ test_that("TRUTHY, FALSY", {
 
 context("is_truthy")
 
-test_that("not falsy things are truthy", {
+test_that("nay falsy things are truthy", {
 
-  expect_true(is_truthy(falsy::not(NULL)))
-  expect_true(is_truthy(falsy::not(FALSE)))
-  expect_true(is_truthy(falsy::not(0L)))
-  expect_true(is_truthy(falsy::not(0.0)))
-  expect_true(is_truthy(falsy::not(0+0i)))
-  expect_true(is_truthy(falsy::not("")))
-  expect_true(is_truthy(falsy::not(as.raw(0))))
-  expect_true(is_truthy(falsy::not(logical())))
-  expect_true(is_truthy(falsy::not(integer())))
-  expect_true(is_truthy(falsy::not(double())))
-  expect_true(is_truthy(falsy::not(complex())))
-  expect_true(is_truthy(falsy::not(character())))
-  expect_true(is_truthy(falsy::not(raw())))
-  expect_true(is_truthy(falsy::not(list())))
-  expect_true(is_truthy(falsy::not(try(silent = TRUE, stop("hey!")))))
+  expect_true(is_truthy(falsy::nay(NULL)))
+  expect_true(is_truthy(falsy::nay(FALSE)))
+  expect_true(is_truthy(falsy::nay(0L)))
+  expect_true(is_truthy(falsy::nay(0.0)))
+  expect_true(is_truthy(falsy::nay(0+0i)))
+  expect_true(is_truthy(falsy::nay("")))
+  expect_true(is_truthy(falsy::nay(as.raw(0))))
+  expect_true(is_truthy(falsy::nay(logical())))
+  expect_true(is_truthy(falsy::nay(integer())))
+  expect_true(is_truthy(falsy::nay(double())))
+  expect_true(is_truthy(falsy::nay(complex())))
+  expect_true(is_truthy(falsy::nay(character())))
+  expect_true(is_truthy(falsy::nay(raw())))
+  expect_true(is_truthy(falsy::nay(list())))
+  expect_true(is_truthy(falsy::nay(try(silent = TRUE, stop("hey!")))))
   
 })
 
@@ -108,12 +108,12 @@ test_that("%&&% returns the parent", {
 
 })
 
-context("not")
+context("nay")
 
-test_that("not works", {
+test_that("nay works", {
 
-  expect_equal(not(TRUTHY), FALSY)
-  expect_equal(not(FALSY), TRUTHY)
+  expect_equal(nay(TRUTHY), FALSY)
+  expect_equal(nay(FALSY), TRUTHY)
   
 })
 

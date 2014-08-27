@@ -192,17 +192,17 @@ is_truthy <- function(object) {
 #'
 #' @export
 #' @examples
-#' not(FALSY)
-#' not(TRUTHY)
+#' nay(FALSY)
+#' nay(TRUTHY)
 #'
 #' ## Check if directory is empty
 #' tmp <- tempdir()
-#' not(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
+#' nay(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
 #'
 #' cat("Hello!", file = tempfile())
-#' not(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
+#' nay(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
 
-not <- function(rhs) {
+nay <- function(rhs) {
   if (is_falsy(rhs)) { TRUTHY } else { FALSY }
 }
 

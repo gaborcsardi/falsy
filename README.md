@@ -223,13 +223,13 @@ col2
 
 ## Negation
 
-The `not` function returns a falsy value if its argument is truthy and
+The `nay` function returns a falsy value if its argument is truthy and
 vice versa. The following code checks if a directory is empty:
 
 
 ```r
 dir.create(tmp <- tempfile())
-not(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
+nay(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
 ```
 
 ```
@@ -238,7 +238,7 @@ not(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
 
 ```r
 cat("Hello!", file = file.path(tmp, "foo"))
-not(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
+nay(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
 ```
 
 ```
