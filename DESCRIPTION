@@ -9,3 +9,5 @@ Description: A value is falsy if it is NULL, FALSE, the empty string,
 License: MIT + file LICENSE
 Suggests:
     testthat
+URL: https://github.com/gaborcsardi/falsy
+BugReports: https://github.com/gaborcsardi/falsy/issues
