@@ -126,3 +126,17 @@ test_that("try_quietly works", {
   expect_output(try_quietly(stop("foo!")), "^$")
 
 })
+
+context("with magrittr")
+
+test_that("or and and work well with magrittr chains", {
+
+  if (require(magrittr, quietly = TRUE)) {
+
+    res <- 1:10 %>% sum() %||% "foobaR" %>% paste("!!!")
+    expect_equal(res, "55 !!!")
+
+    res2 <- 1:10 %>% sum() %&&% "foo" %>% paste("!!!")
+    expect_equal(res2, "foo !!!")
+  }
+})
