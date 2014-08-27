@@ -1,7 +1,7 @@
 
 
 
-# falsy — warning: this package is experimental
+# falsy
 
 [![Linux Build Status](https://travis-ci.org/gaborcsardi/falsy.png?branch=master)](https://travis-ci.org/gaborcsardi/falsy)
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/cn0ooxtcame61mpu)](https://ci.appveyor.com/project/gaborcsardi/falsy)
@@ -170,6 +170,13 @@ one can write
 ```r
 v <- 5:10
 v %&&% { v <- v - min(v) }
+```
+
+```
+## [1] 0 1 2 3 4 5
+```
+
+```r
 v
 ```
 
@@ -243,4 +250,129 @@ nay(dir(tmp, all.files = TRUE, no.. = TRUE)) %||% message("Not empty")
 
 ```
 ## Not empty
+```
+
+```
+## NULL
+```
+
+## Working with magrittr pipes
+
+falsy goes well with the pipe operator of the
+[`magrittr` package](https://github.com/smbache/magrittr). In particular,
+a falsy or truthy value in pipe can be replaced with another value
+using `%||%` and `%&&%`:
+
+
+```r
+library(magrittr)
+vect <- 1:10
+vect %>%
+  sum() %||% "foo" %>%
+  paste("!!!")
+```
+
+```
+## [1] "55 !!!"
+```
+
+```r
+vect <- c()
+vect %>%
+  sum() %||% "foo" %>%
+  paste("!!!")
+```
+
+```
+## [1] "foo !!!"
+```
+
+## Warnings
+
+### FALSE and falsy are not the same
+
+From the definition of falsy values, it might not be obvious,
+but there are some values that R considers true, are falsy, and
+some values that R considers false are truthy.
+
+The most notable example is objects with attributes. R does not
+care about the presense of attributes in the condition of the `if` construct,
+but `falsy` does:
+
+
+```r
+obj <- matrix(FALSE, 1, 1)
+if (!obj) "false"
+```
+
+```
+## [1] "false"
+```
+
+```r
+is_falsy(obj)
+```
+
+```
+## [1] FALSE
+```
+
+### Vectors
+
+falsy behaves somewhat surprisingly with vectors. Empty vectors are falsy,
+but some of the non-empty ones are truthy, the most obvious example beging
+`FALSE`, which is also a length one logical vector. The others are `0`,
+`0L`, `""`, `0+0i` and `as.raw(0)`. (See at the beginning.) This means that you
+cannot reliably use `%||%` to check if a vector is empty. You need to check
+the legth of the vector explicitly.
+
+
+```r
+empty <- c()
+non_empty1 <- c("foo", "bar")
+non_empty2 <- c("")
+is_falsy(empty)
+```
+
+```
+## [1] TRUE
+```
+
+```r
+is_falsy(non_empty1)
+```
+
+```
+## [1] FALSE
+```
+
+```r
+is_falsy(non_empty2)
+```
+
+```
+## [1] TRUE
+```
+
+This is incorrect:
+
+
+```r
+non_empty2 %||% stop("empty vector!")
+```
+
+```
+## Error: empty vector!
+```
+
+The correct way to test if a vector is empty is to test if its length is
+zero:
+
+
+```r
+length(non_empty2) %||% stop("empty vector!")
+```
+
+```
+## [1] 1
 ```
