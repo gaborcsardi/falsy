@@ -13,9 +13,4 @@ try_quietly(expr)
 We just call \code{try} and set its \code{silent} argument to
 \code{TRUE}.
 }
-\examples{
-\donttest{
-try_quietly(library(foobar)) \%||\% message("Skipping foobar")
-}
-}
 

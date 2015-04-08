@@ -18,15 +18,6 @@ Robust 'or' operator working with truthy and falsy values.
 }
 \examples{
 \donttest{
-## Set colors from colorspace package with a fallback
-col <- try(colorspace::rainbow_hcl(5), silent = TRUE) \%||\% rainbow(5)
-
-## Simpler with silent try
-col <- try_quietly(colorspace::rainbow_hcl(5)) \%||\% rainbow(5)
-
-## Message if foobar is not installed
-try_quietly(library(foobar)) \%||\% message("no foobar")
-
 ## Message if list is empty
 l <- list(1,2,3)
 l \%||\% message("list is empty")

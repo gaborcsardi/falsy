@@ -128,15 +128,6 @@ is_truthy <- function(object) {
 #' @examples
 #'
 #' \donttest{
-#' ## Set colors from colorspace package with a fallback
-#' col <- try(colorspace::rainbow_hcl(5), silent = TRUE) %||% rainbow(5)
-#'
-#' ## Simpler with silent try
-#' col <- try_quietly(colorspace::rainbow_hcl(5)) %||% rainbow(5)
-#'
-#' ## Message if foobar is not installed
-#' try_quietly(library(foobar)) %||% message("no foobar")
-#'
 #' ## Message if list is empty
 #' l <- list(1,2,3)
 #' l %||% message("list is empty")
@@ -214,11 +205,6 @@ nay <- function(rhs) {
 #' @param expr The R expression to evaluate.
 #'
 #' @export
-#' @examples
-#'
-#' \donttest{
-#' try_quietly(library(foobar)) %||% message("Skipping foobar")
-#' }
 
 try_quietly <- function(expr) {
   try(expr, silent = TRUE)
