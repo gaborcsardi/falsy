@@ -1,7 +1,7 @@
 Package: falsy
 Title: Define Truthy and Falsy Values
 Version: 1.0.1
-Authors@R: person("Gabor", "Csardi", , "csardi.gabort@gmail.com", role = c("aut", "cre"))
+Authors@R: person("Gabor", "Csardi", , "csardi.gabor@gmail.com", role = c("aut", "cre"))
 Description: A value is falsy if it is NULL, FALSE, the empty string,
     zero, or an empty vector or list. Other values are truthy. The new
     %&&% and %||% operators work with falsy and truthy values and
