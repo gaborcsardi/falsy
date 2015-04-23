@@ -3,8 +3,10 @@
 
 # falsy
 
-[![Linux Build Status](https://travis-ci.org/gaborcsardi/falsy.png?branch=master)](https://travis-ci.org/gaborcsardi/falsy)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/cn0ooxtcame61mpu)](https://ci.appveyor.com/project/gaborcsardi/falsy)
+[![Linux Build Status](https://travis-ci.org/gaborcsardi/falsy.svg?branch=master)](https://travis-ci.org/gaborcsardi/falsy)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/falsy?svg=true)](https://ci.appveyor.com/project/gaborcsardi/falsy)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/falsy)](http://cran.r-project.org/web/packages/falsy/index.html)
+
 
 falsy defines *falsy* and *truthy* values. You might be familiar with them
 in other dynamic laguanges with prevalent implicit type conversions,
@@ -111,7 +113,7 @@ length(v) > 0 || stop("empty v")
 ```
 
 ```
-## Error: empty v
+## Error in eval(expr, envir, enclos): empty v
 ```
 
 Unfortunately, the `||` and `&&` operators fail on values that cannot be
@@ -136,7 +138,7 @@ v %||% stop("empty v")
 ```
 
 ```
-## Error: empty v
+## Error in eval(rhs, envir = parent.frame()): empty v
 ```
 
 and more importantly also 
@@ -156,7 +158,7 @@ l$c %||% stop("no c in l")
 ```
 
 ```
-## Error: no c in l
+## Error in eval(rhs, envir = parent.frame()): no c in l
 ```
 
 This works, because for non-existing keys lists return `NULL`, which is
@@ -212,7 +214,7 @@ col
 ```
 
 ```
-## [1] "#FF0000FF" "#CCFF00FF" "#00FF66FF" "#0066FFFF" "#CC00FFFF"
+## [1] "#E495A5" "#BDAB66" "#65BC8C" "#55B8D0" "#C29DDE"
 ```
 
 You probably want to suppress the misleading error message, whith is
@@ -225,7 +227,7 @@ col2
 ```
 
 ```
-## [1] "#FF0000FF" "#CCFF00FF" "#00FF66FF" "#0066FFFF" "#CC00FFFF"
+## [1] "#E495A5" "#BDAB66" "#65BC8C" "#55B8D0" "#C29DDE"
 ```
 
 ## Negation
@@ -362,7 +364,7 @@ non_empty2 %||% stop("empty vector!")
 ```
 
 ```
-## Error: empty vector!
+## Error in eval(rhs, envir = parent.frame()): empty vector!
 ```
 
 The correct way to test if a vector is empty is to test if its length is

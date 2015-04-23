@@ -10,8 +10,10 @@ knitr::opts_chunk$set(
 
 # falsy
 
-[![Linux Build Status](https://travis-ci.org/gaborcsardi/falsy.png?branch=master)](https://travis-ci.org/gaborcsardi/falsy)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/cn0ooxtcame61mpu)](https://ci.appveyor.com/project/gaborcsardi/falsy)
+[![Linux Build Status](https://travis-ci.org/gaborcsardi/falsy.svg?branch=master)](https://travis-ci.org/gaborcsardi/falsy)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/falsy?svg=true)](https://ci.appveyor.com/project/gaborcsardi/falsy)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/falsy)](http://cran.r-project.org/web/packages/falsy/index.html)
+
 
 falsy defines *falsy* and *truthy* values. You might be familiar with them
 in other dynamic laguanges with prevalent implicit type conversions,
