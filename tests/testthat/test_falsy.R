@@ -123,7 +123,7 @@ test_that("try_quietly works", {
 
   expect_equal(try_quietly("foo"), "foo")
   expect_true(inherits(try_quietly(stop("foo!")), "try-error"))
-  expect_output(try_quietly(stop("foo!")), "^$")
+  expect_silent(try_quietly(stop("foo!")))
 
 })
 

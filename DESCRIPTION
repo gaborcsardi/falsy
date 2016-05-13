@@ -8,6 +8,7 @@ Description: A value is falsy if it is NULL, FALSE, the empty string,
     can be used for concise conditional execution.
 License: MIT + file LICENSE
 Suggests:
-    testthat
+    testthat (>= 1.0.1)
 URL: https://github.com/gaborcsardi/falsy
 BugReports: https://github.com/gaborcsardi/falsy/issues
+RoxygenNote: 5.0.1
